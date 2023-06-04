@@ -13,3 +13,11 @@ TO DO
 * TensorFlow Datasets (tensorflow-datasets==4.9.2)
 
 ## Usage
+### Data Download
+Run ```python3 tools/download_data.py``` to download the cifar10 dataset available through https://www.tensorflow.org/datasets/catalog/overview.
+
+### Training the Model (Optional)
+We have provided saved model weights inside the ```checkpoints``` folder. To retrain the model, run ```python3 train_model.py```.
+
+### Inference
+To generate a new prediction, run ```python3 predict.py "./checkpoints/training/cp-027.ckpt"```. You must provide a path to the checkpoint to load the pre-trained model weights. Your checkpoint path must end with **.ckpt**. Do not include the rest of the name (ex: .data-00000-of-00001). 
