@@ -9,7 +9,7 @@ def main():
     data = generate_dataset(filenames, args.batch_size, args.input_img_shape)
 
     model = model_builder(args.input_img_shape)
-    model.compile(metrics=['accuracy'])
+    model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
     model.load_weights(args.checkpoint_dir).expect_partial()
     eval_loss, eval_acc = model.evaluate(data)
     print('Eval loss: {}, Eval Accuracy: {}'.format(eval_loss, eval_acc))

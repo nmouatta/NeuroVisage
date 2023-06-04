@@ -8,7 +8,7 @@ from helpers import generate_dataset
 def main():
     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(os.path.join(args.checkpoint_dir, 'training/cp-{'
                                                                                                'epoch:03d}.ckpt'),
-                                                             save_best_only=True, save_weights_only=True)
+                                                             save_weights_only=True)
     learning_rate_callback = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3, verbose=1)
 
     training_files = tf.data.Dataset.list_files(args.train_input_dir)
