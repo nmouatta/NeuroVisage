@@ -10,7 +10,7 @@ def _read_tfrecord(serialized_example, img_size):
         serialized_example, feature_description
     )
     image = tf.io.decode_jpeg(example['image'], channels=3)
-    image = tf.image.resize(image, img_size)
+    image = tf.image.resize(image, (img_size[0], img_size[1]))
     image = tf.cast(image, tf.float32)
     image = image / 255
     return image, example['label']

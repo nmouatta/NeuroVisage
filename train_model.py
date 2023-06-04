@@ -34,7 +34,7 @@ if __name__ == '__main__':
     parser.add_argument('--checkpoint_dir', type=str, default='./checkpoints',
                         help='Directory path for saving training checkpoints')
     parser.add_argument('--input_img_shape', type=tuple, default=(32, 32, 3), help='Input img shape, ex: (32, 32, 3)')
-    parser.add_argument('--num_epochs', type=int, default=300, help='Number of epochs')
+    parser.add_argument('--num_epochs', type=int, default=50, help='Number of epochs')
     parser.add_argument('--batch_size', type=int, default=128, help='Global batch size')
     parser.add_argument('--lr', type=float, default=0.1, help='Learning Rate')
     args = parser.parse_args()
