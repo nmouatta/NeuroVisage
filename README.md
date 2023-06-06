@@ -24,4 +24,4 @@ Run ```python3 tools/download_data.py``` to download the cifar10 dataset availab
 We have provided saved model weights inside the ```checkpoints``` folder. To retrain the model, run ```python3 train_model.py```.
 
 ### Inference
-To generate a new prediction, run ```python3 predict.py "./checkpoints/training/cp-027.ckpt"```. You must provide a path to the checkpoint to load the pre-trained model weights. Your checkpoint path must end with **.ckpt**. Do not include the rest of the name (ex: .data-00000-of-00001). 
+To generate a new prediction, run ```python3 predict.py "./checkpoints/training/cp-027.ckpt"```. You must provide a path to the checkpoint to load the pre-trained model weights. Your checkpoint path must end with **.ckpt**. Do not include the rest of the name (ex: .data-00000-of-00001). This defaults to running predictions on the CIFAR10 test set (10,000 images). To use a different dataset instead, run ```python3 predict.py "./checkpoints/training/cp-027.ckpt" --data_dir "/path/your_data.tfrecord*"```. The data must be in **.tfrecord** format. 
